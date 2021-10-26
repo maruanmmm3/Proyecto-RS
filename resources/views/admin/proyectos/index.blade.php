@@ -14,7 +14,7 @@
                                 {{ $proyecto->nombre }}
                             </div>
                             <div class="card-body">
-                                <img src="{{Storage::url($proyecto->image->url)}}" alt="">
+                                <img src="{{asset($proyecto->image->url)}}" alt="">
                             </div>
                             <div class="row">
                                 <div class="col-lg-4 col-md-6">
