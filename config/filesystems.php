@@ -37,8 +37,8 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path('/archivos'),
-            'url' => public_path() . '/archivos',
+            'root' => public_path(''),
+            'url' => public_path() . '',
             'visibility' => 'public',
         ],
 
