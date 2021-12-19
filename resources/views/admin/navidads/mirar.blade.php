@@ -67,8 +67,9 @@
                                 <th>INSTITUCION</th>
                                 <th>CANT.BENEFI</th>
                                 <th>CANT.VOLUN</th>
+                                <th>CANT.REGA</th>
                                 <th>CANT.HORAS</th>
-                                <th>CANT.HORAS EJECUTADAS</th>
+                                <th>CANT.HORAS EJE.</th>
                                 <th>AREA</th>
                                 <th>FECHA INICIAL</th>
                                 <th>FECHA FINAL</th>
@@ -83,6 +84,7 @@
                                     <td>{{ $navidad->institucion }}</td>
                                     <td>{{ $navidad->cant_ben }}</td>
                                     <td>{{ $navidad->cant_vol }}</td>
+                                    <td>{{ $navidad->cant_rega }}</td>
                                     <td>{{ $navidad->cant_hor }}</td>
                                     <td>{{ $navidad->cant_horeje }}</td>
                                     <td>{{ $navidad->area }}</td>

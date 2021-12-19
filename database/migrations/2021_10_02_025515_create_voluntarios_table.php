@@ -18,6 +18,8 @@ class CreateVoluntariosTable extends Migration
             $table->string('nombre');
             $table->text('descripcion');
             $table->string('encargado');
+            $table->float('presupuestoesti');
+            $table->float('ejecucionreal');
             $table->string('lugar');
             $table->string('fecha');
             $table->float('hora');

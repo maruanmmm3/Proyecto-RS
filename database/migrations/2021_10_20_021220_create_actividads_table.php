@@ -18,6 +18,7 @@ class CreateActividadsTable extends Migration
             $table->string('institucion');
             $table->float('cant_ben');
             $table->float('cant_vol');
+            $table->float('cant_rega');
             $table->float('cant_hor');
             $table->float('cant_horeje');
             $table->string('area');

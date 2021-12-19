@@ -29,8 +29,9 @@ Route::post('/contactano/store', [InicioController::class, 'store'])->name('inic
     return view('dashboard');
 })->name('dashboard'); */
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [ProyectoController::class, 'index'], function () {
-    return view('admin.proyectos.index');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [ProyectoController::class, 'datos'], function () {
+    return view('admin.datos.index');
 })->name('dashboard');
 
+/* Route::get('inicios', [ProyectoController::class, 'vista'])->name('dash'); */
 /* Route::get('/dashboard', [ProyectoController::class, 'create'])->name('proyectos.create'); */

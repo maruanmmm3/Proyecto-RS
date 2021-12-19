@@ -16,6 +16,7 @@ class EstudianteController extends Controller
     {
         $proyectos = Proyecto::all();
         $estudiantes = Estudiante::all();
+
         return view('admin.estudiantes.index', compact('proyectos','estudiantes'));
     }
 
@@ -28,8 +29,10 @@ class EstudianteController extends Controller
 
         $estudiantesNumero = Estudiante::where('carrera_id', $carrera->id)->count();
 
-       $estudiantesM = Estudiante::where('sexo', "mujer")->count();
-       $estudiantesH = Estudiante::where('sexo', "hombre")->count(); 
+       $estudiantesM = Estudiante::where('carrera_id', $carrera->id)
+                                    ->where('sexo', "mujer")->count();
+       $estudiantesH = Estudiante::where('carrera_id', $carrera->id)
+                                    ->where('sexo', "hombre")->count(); 
 
 
         $estudiantestotal = [];
@@ -54,7 +57,7 @@ class EstudianteController extends Controller
     public function crear(Carrera $carrera)
     {
         $proyectos = Proyecto::all();
-        /* $carreras = Carrera::all(); */
+      
         return view('admin.estudiantes.crear', compact('proyectos','carrera'));
     }
 
@@ -63,9 +66,7 @@ class EstudianteController extends Controller
         $file = $request->file('file');
         Excel::import(new EstudianteImport, $file); 
 
-        /* $carrera = $request->carrera_id; */
-
-        /* return back()->with('message', 'importacio completa'); */
+      
         return redirect()->route('admin.estudiantes.vista', compact('carrera'));
     }
 
@@ -93,29 +94,20 @@ class EstudianteController extends Controller
         //
     }
 
-  /*   public function destroy(Estudiante $estudiante)
-    {
-        $estudiante->delete();
-        return redirect()->route('admin.technicals.index')->with('info','El Estudiante se elimino con exito');
-    } */
+  
 
     public function destroy(Estudiante $estudiante)
     {
         $estudiante->delete();
-        /* return redirect()->route('admin.technicals.index')->with('info','El Estudiante se elimino con exito'); */
+        
         return back()->with('eliminar', 'ok');
     }
 
-   /*  public function eliminar(Estudiante $estudiante, Carrera $carrera)
-    {
-        $estudiante->delete();
-        return redirect()->route('admin.estudiantes.vista',$carrera)->with('info','El Producto se elimino con exito');
-    } */
+   
 
     public function eliminar(Request $request)
     {
         return $request->all();
-        /* $estudiante->delete();
-        return redirect()->route('admin.estudiantes.vista',$carrera)->with('info','El Producto se elimino con exito'); */
+        
     }
 }

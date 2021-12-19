@@ -14,6 +14,10 @@ class Proyecto extends Model
     protected $fillable = ['nombre', 'proposito','icono'];
     //Relacion muchos a muchos
 
+    public function actividaddos(){
+        return $this->hasMany(Actividaddos::class);
+    }
+
     public function actividad_ponentes(){
         return $this->belongsToMany(Actividad_ponente::class);
     }

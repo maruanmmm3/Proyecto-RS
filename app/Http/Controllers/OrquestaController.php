@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estudiante;
 use App\Models\Orquesta;
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class OrquestaController extends Controller
     {
         $proyectos = Proyecto::all();
         $orquestas = Orquesta::all();
+
         return view('admin.orquestas.index', compact('proyectos','orquestas'));
     }
 
@@ -22,6 +24,7 @@ class OrquestaController extends Controller
     {
         $proyectos = Proyecto::all();
         $orquesta = Orquesta::all();
+
         return view('admin.orquestas.create', compact('proyectos','orquesta'));
     }
 
@@ -37,11 +40,8 @@ class OrquestaController extends Controller
         $orquesta = Orquesta::create($request->all());
 
         if($request->file('file')){
-       
 
-           $imagen = $request->file('file')->store('public/orquestas');
-
-           $url = Storage::url($imagen);
+           $url = Storage::put('orquestas', $request->file('file'));
 
             $orquesta->image()->create([
                 'url' => $url
@@ -62,6 +62,7 @@ class OrquestaController extends Controller
     public function edit(Orquesta $orquestum)
     {
         $proyectos = Proyecto::all();
+
         return view('admin.orquestas.edit', compact('orquestum','proyectos'));
     }
 
@@ -76,9 +77,9 @@ class OrquestaController extends Controller
     
         $orquestum->update($request->all());
         if ($request->file('file')) {
-           /*  $url = Storage::put('productos', $request->file('file')); */
-           $imagenes = $request->file('file')->store('public/orquestas');
-           $url = Storage::url($imagenes);
+         
+           $imagenes = $request->file('file')->store('orquestas');
+           $url = $imagenes;
             if($orquestum->image){
                 Storage::delete($orquestum->image->url);
 
@@ -92,7 +93,7 @@ class OrquestaController extends Controller
             }
         }
 
-        return redirect()->route('admin.orquestas.index',$orquestum)->with('info','La Orquesta se actualizado con exito');;
+        return redirect()->route('admin.orquestas.index',$orquestum)->with('info','La Orquesta se actualizado con exito');
     }
 
   

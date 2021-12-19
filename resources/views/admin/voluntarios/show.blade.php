@@ -128,7 +128,7 @@
                 labels: <?= $participantestotal?>,
                 datasets: [
                     {
-                        label: "Asistencias Edades",
+                        label: "Edades",
                         data: <?= $participantestotal2 ?>,
                         borderColor: "rgba(0, 194, 146,0.5)",
                         borderWidth: "0",

@@ -16,7 +16,7 @@
        {{--  @foreach ($promocion as $pro)
         {{$pro->id}}
         @endforeach --}}
-        
+    
     </div>
     @foreach ($carreras as $carrera)
         

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carrera;
+use App\Models\Estudiante;
 use App\Models\Promocion;
 use Illuminate\Http\Request;
 use App\Models\Proyecto;
@@ -16,6 +17,8 @@ class CarreraController extends Controller
         
         $proyectos = Proyecto::all();
         $carreras = Carrera::all(); 
+
+        
         return view('admin.carreras.index', compact('proyectos','carreras'));
     }
 
@@ -34,18 +37,13 @@ class CarreraController extends Controller
         return view('admin.carreras.vista', compact('proyectos','carreras','promocion'),["carreratotal" => json_encode($carrerasTo),"promociontotal" => json_encode($promocionesTo)]);
     }
 
- /* 
-    public function create()
-    {
-        $proyectos = Proyecto::all();
-        $carreras = Carrera::all();
-        $promocions = Promocion::pluck('nombre','id');
-        return view('admin.carreras.create', compact('proyectos','carreras','promocions'));
-    } */
+
     public function crear(Promocion $promocion)
     {
         $proyectos = Proyecto::all();
         $carreras = Carrera::all();
+
+        
         return view('admin.carreras.crear', compact('proyectos','carreras','promocion'));
     }
 
@@ -73,6 +71,7 @@ class CarreraController extends Controller
     public function edit(Promocion $promocion)
     {
         $proyectos = Proyecto::all();
+
         return view('admin.carreras.edit', compact('promocion','proyectos'));
     }
 
@@ -88,7 +87,7 @@ class CarreraController extends Controller
        
         $carrera->delete();
         return back();
-        /* return redirect()->route('admin.carreras.vista', compact('promocion'))->with('info','La carrera ha sido Eliminado'); */
+        
     }
 
     

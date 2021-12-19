@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="container" style="position: relative;">
-                    <img src="{{asset('images/navidad.png')}}" style="height: 250px; width: 100%; object-fit: cover;" alt="">
+                    <img src="{{asset('images/navidad1.png')}}" style="height: 250px; width: 100%; object-fit: cover;" alt="">
                     <div 
                         class="d-flex justify-content-center mt-2">
                         <a type="submit" href="{{route('admin.navidads.crear',$navidad)}}" class="btn btn-danger">Importar Datos</a>
@@ -14,8 +14,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
 
@@ -23,7 +21,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="container" style="position: relative;">
-                    <img src="{{asset('images/navidad2.jpg')}}" style="height: 250px; width: 100%; object-fit: cover;" alt="">
+                    <img src="{{asset('images/navidad22.png')}}" style="height: 250px; width: 100%; object-fit: cover;" alt="">
                     <div 
                         class="d-flex justify-content-center mt-2">
                         <a type="submit" href="{{route('admin.mavidads.mirar',$navidad)}}" class="btn btn-danger">Visualizar Datos</a>
@@ -38,7 +36,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="container" style="position: relative;">
-                    <img src="{{asset('images/navidad2.jpg')}}" style="height: 250px; width: 100%; object-fit: cover;" alt="">
+                    <img src="{{asset('images/navidad3.png')}}" alt="">
                     
                 </div>
             </div>
@@ -48,7 +46,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="container" style="position: relative;">
-                    <img src="{{asset('images/navidad.png')}}" style="height: 250px; width: 100%; object-fit: cover;" alt="">
+                    <img src="{{asset('images/navidad4.png')}}" alt="">
                   
                 </div>
             </div>

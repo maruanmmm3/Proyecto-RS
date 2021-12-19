@@ -9,7 +9,7 @@ class Voluntario extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre','descripcion','encargado','lugar','fecha','hora'];
+    protected $fillable = ['nombre','descripcion','encargado','presupuestoesti','ejecucionreal','lugar','fecha','hora'];
 
     //Relacion muchos a muchos
     //Este se la agremos mas en la palabra de la funcion 

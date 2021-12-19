@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\ParticipanteImport;
+use App\Models\Estudiante;
 use App\Models\Participante;
 use App\Models\Proyecto;
 use App\Models\Voluntario;
@@ -33,6 +34,7 @@ class VoluntarioController extends Controller
     public function vista()
     {
         $proyectos = Proyecto::all();
+
         return view('admin.voluntarios.vista', compact('proyectos'));
     }
 
@@ -40,12 +42,14 @@ class VoluntarioController extends Controller
     public function create()
     {
         $proyectos = Proyecto::all();
+
         return view('admin.voluntarios.create', compact('proyectos'));
     }
 
     public function crear(Voluntario $voluntario)
     {
         $proyectos = Proyecto::all();
+
         return view('admin.voluntarios.crear', compact('proyectos','voluntario'));
     }
 
@@ -54,9 +58,7 @@ class VoluntarioController extends Controller
         $file = $request->file('file');
         Excel::import(new ParticipanteImport, $file); 
 
-        /* $carrera = $request->carrera_id; */
-
-        /* return back()->with('message', 'importacio completa'); */
+        
         return redirect()->route('admin.voluntarios.show', compact('voluntario'));
     }
 
@@ -67,6 +69,8 @@ class VoluntarioController extends Controller
             'nombre' => 'required',
             'descripcion' => 'required',
             'encargado' => 'required',
+            'presupuestoesti' => 'required',
+            'ejecucionreal' => 'required',
             'lugar' => 'required',
             'fecha' => 'required',
             'hora' => 'required',
@@ -101,20 +105,34 @@ class VoluntarioController extends Controller
     }
 
    
-    public function edit($id)
+    public function edit(Voluntario $voluntario)
     {
-        //
+        $proyectos = Proyecto::all();
+
+        return view('admin.voluntarios.edit', compact('proyectos','voluntario'));
     }
 
   
-    public function update(Request $request, $id)
+    public function update(Request $request, Voluntario $voluntario)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'encargado' => 'required',
+            'presupuestoesti' => 'required',
+            'ejecucionreal' => 'required',
+            'lugar' => 'required',
+            'fecha' => 'required',
+            'hora' => 'required',
+        ]);
+        $voluntario->update($request->all());
+        return redirect()->route('admin.voluntarios.index',$voluntario);
     }
 
   
-    public function destroy($id)
+    public function destroy(Voluntario $voluntario)
     {
-        //
+        $voluntario->delete();
+        return redirect()->route('admin.voluntarios.index');
     }
 }

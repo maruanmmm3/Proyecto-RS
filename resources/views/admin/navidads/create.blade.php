@@ -16,7 +16,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('descripcion', 'Descripcion:') !!}
+                {!! Form::label('descripcion', 'Descripción:') !!}
                 {!! Form::textArea('descripcion', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el proposito de la Campaña Navideña']) !!}
 
                 @error('descripcion')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estudiante;
 use App\Models\Promocion;
 use Illuminate\Http\Request;
 use App\Models\Proyecto;
@@ -9,24 +10,18 @@ use Illuminate\Support\Facades\Storage;
 
 class PromocionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         $proyectos = Proyecto::all();
+
+        
         return view('admin.promocions.create', compact('proyectos'));
     }
 
@@ -43,10 +38,7 @@ class PromocionController extends Controller
 
         if($request->file('file')){
        
-
-           $imagen = $request->file('file')->store('public/promocions');
-
-           $url = Storage::url($imagen);
+            $url = Storage::put('promocions', $request->file('file'));
 
             $promocion->image()->create([
                 'url' => $url
@@ -66,6 +58,7 @@ class PromocionController extends Controller
     public function edit(Promocion $promocion)
     {
         $proyectos = Proyecto::all();
+
         return view('admin.promocions.edit', compact('promocion','proyectos'));
     }
 
@@ -79,9 +72,9 @@ class PromocionController extends Controller
         ]);
         $promocion->update($request->all());
         if ($request->file('file')) {
-           /*  $url = Storage::put('productos', $request->file('file')); */
+          
            $imagenes = $request->file('file')->store('public/promocions');
-           $url = Storage::url($imagenes);
+           $url = $imagenes;
             if($promocion->image){
                 Storage::delete($promocion->image->url);
 

@@ -25,7 +25,7 @@
                         </div>
                         <br>
                     
-                        <b>{!! Form::label('BENEFICIADOS') !!}</b>
+                        <b>{!! Form::label('VOLUNTARIOS') !!}</b>
                         <div class="col-md-12">
                             {!! Form::label('hombre', 'Varones:') !!}
                             {!! Form::text('hombre', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la cantidad de varones']) !!}

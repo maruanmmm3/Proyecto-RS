@@ -43,7 +43,7 @@
                                     Año del Evento: {{ $beneficiado->year }}
                                 </h6>
                                 <h6 class="mt-3">
-                                    Cantidad de Beneficiados: {{ $beneficiado->arbol }}
+                                    Cantidad de Arboles: {{ $beneficiado->arbol }}
                                 </h6>
                                 <h6 class="mt-3">
                                     Cantidad de Hombres: {{ $beneficiado->hombre }}

@@ -48,6 +48,15 @@
                                                 </button>
                                             </div>  
                                     </form> 
+
+                                    <div class="col-md-2">
+                                        <div class="col-md-2">
+                                            <a href="{{route('admin.sembrandos.edit', $sembrando)}}">
+                                                <i class="fa fa-pencil-square-o mt-2" style="font-size:1.4em"  aria-hidden="true"></i>
+                                           </a>
+                                        </div>
+                                    </div>  
+                                    
                                     <div class="col-md-2">
                                             <div class="col-md-2">
                                                 <a href="{{route('admin.sembrandos.show', $sembrando)}}">
@@ -55,6 +64,9 @@
                                                </a>
                                             </div>
                                     </div>  
+
+                                    
+
                                 </div>
                             </div>    
                         </div>

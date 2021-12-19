@@ -71,7 +71,7 @@
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
                 <div class="rd-navbar-brand">
-                  <!--Brand--><a class="brand" href="index.html"><img src="images/sider.png" alt="" width="225"
+                  <!--Brand--><a class="brand" href="index.html"><img src="{{asset('inicios/images/sider.png')}}" alt="" width="225"
                       height="18" /></a>
                 </div>
               </div>
@@ -143,17 +143,7 @@
       </div>
     </header>
     <!-- RD Google Map-->
-    <section class="section section-fluid">
-      <div class="google-map-container" data-zoom="5" data-icon="images/gmap_marker.png"
-        data-icon-active="images/gmap_marker.png" data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45."
-        data-styles="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFBB00&quot;},{&quot;saturation&quot;:43.400000000000006},{&quot;lightness&quot;:37.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FFC200&quot;},{&quot;saturation&quot;:-61.8},{&quot;lightness&quot;:45.599999999999994},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:51.19999999999999},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#FF0300&quot;},{&quot;saturation&quot;:-100},{&quot;lightness&quot;:52},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#0078FF&quot;},{&quot;saturation&quot;:-13.200000000000003},{&quot;lightness&quot;:2.4000000000000057},{&quot;gamma&quot;:1}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;stylers&quot;:[{&quot;hue&quot;:&quot;#00FF6A&quot;},{&quot;saturation&quot;:-1.0989010989011234},{&quot;lightness&quot;:11.200000000000017},{&quot;gamma&quot;:1}]}]">
-        <div class="google-map"></div>
-        <ul class="google-map-markers">
-          <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45."
-            data-description="9870 St Vincent Place, Glasgow"></li>
-        </ul>
-      </div>
-    </section>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15759.771168615971!2d-78.60023398848621!3d-9.068976573209532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab810fcda1a241%3A0xe384b6d895885de7!2sSIDERPERU!5e0!3m2!1ses!2spe!4v1638651834740!5m2!1ses!2spe" width="1200" height="530" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
     <!-- Contact information-->
     <section class="section section-sm section-first bg-default">
@@ -164,8 +154,8 @@
               <div class="box-contacts-body">
                 <div class="box-contacts-icon fl-bigmug-line-cellphone55"></div>
                 <div class="box-contacts-decor"></div>
-                <p class="box-contacts-link"><a href="tel:#">+1 323-913-4688</a></p>
-                <p class="box-contacts-link"><a href="tel:#">+1 323-888-4554</a></p>
+                <p class="box-contacts-link"><a href="tel:#">+51 943-750-857</a></p>
+                <p class="box-contacts-link"><a href="tel:#">+51 943-770-691</a></p>
               </div>
             </article>
           </div>
@@ -174,7 +164,7 @@
               <div class="box-contacts-body">
                 <div class="box-contacts-icon fl-bigmug-line-up104"></div>
                 <div class="box-contacts-decor"></div>
-                <p class="box-contacts-link"><a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></p>
+                <p class="box-contacts-link"><a href="#"> AV. SANTIAG ANTUNEZ DE MAYOLO NRO. S/N Z.I. ZONA INDUSTRIAL7</a></p>
               </div>
             </article>
           </div>
@@ -183,8 +173,8 @@
               <div class="box-contacts-body">
                 <div class="box-contacts-icon fl-bigmug-line-chat55"></div>
                 <div class="box-contacts-decor"></div>
-                <p class="box-contacts-link"><a href="mailto:#">mail@demolink.org</a></p>
-                <p class="box-contacts-link"><a href="mailto:#">info@demolink.org</a></p>
+                <p class="box-contacts-link"><a href="mailto:#">acuevac@sider.com.pe.</a></p>
+                <p class="box-contacts-link"><a href="mailto:#">jcastillo@sider.com.pe</a></p>
               </div>
             </article>
           </div>
@@ -270,6 +260,19 @@
                             Z.I. ZONA INDUSTRIAL</a></div>
                       </div>
                     </li>
+                    <li>
+                      <div class="unit">
+                        <div class="unit-left"><span class="icon fa fa-phone"></span></div>
+                        <div class="unit-body"><a class="link-phone" href="tel:#">+51 943-770-691</a></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="unit">
+                        <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
+                        <div class="unit-body"><a class="link-aemail" href="mailto:#">acuevac@sider.com.pe</a>
+                        </div>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -277,40 +280,27 @@
             <div class="col-sm-6 col-md-5 col-lg-3 col-xl-4">
               <div class="oh-desktop">
                 <div class="wow slideInDown" data-wow-delay="0s">
-                  <h6 class="text-spacing-100 text-uppercase">Popular news</h6>
-                  <!-- Post Minimal 2-->
-                  <article class="post post-minimal-2">
-                    <p class="post-minimal-2-title"><a href="#">Your Personal Guide to 5 Best Places to Visit on
-                        Earth</a></p>
-                    <div class="post-minimal-2-time">
-                      <time datetime="2019-05-04">May 04, 2019</time>
-                    </div>
-                  </article>
-                  <!-- Post Minimal 2-->
-                  <article class="post post-minimal-2">
-                    <p class="post-minimal-2-title"><a href="#">Top 10 Hotels: Rating by Wonder Tour Travel Experts</a>
-                    </p>
-                    <div class="post-minimal-2-time">
-                      <time datetime="2019-05-04">May 04, 2019</time>
-                    </div>
-                  </article>
+                  
                 </div>
               </div>
             </div>
+            
             <div class="col-sm-11 col-md-7 col-lg-5 col-xl-4">
               <div class="oh-desktop">
                 <div class="wow slideInLeft" data-wow-delay="0s">
                   <h6 class="text-spacing-100 text-uppercase">Enlace Rapido </h6>
-                  <ul class="row-6 list-0 list-marked list-marked-md list-marked-secondary list-custom-2">
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="#">Our Tours</a></li>
-                    <li><a href="#">Our Team</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Blog</a></li>
+
+                  <br>
+                   <ul class="">
+                    <li><a href="https://www.siderperu.com.pe/">https://www.siderperu.com.pe/</a></li>
+                    
                   </ul>
-                  <div class="group-md group-middle justify-content-sm-start"><a
-                      class="button button-lg button-primary button-ujarak" href="#">Get in touch</a></div>
-                </div>
+
+                  <ul class="">
+                    <li><a href="https://www.facebook.com/SIDERPERUOFICIAL/">https://www.facebook.com/SIDERPERUOFICIAL/</a></li>
+                    
+                  </ul>
+              </div>
               </div>
             </div>
           </div>
@@ -322,22 +312,20 @@
             <div class="col-sm-6 col-md-4 text-sm-right text-md-center">
               <div>
                 <ul class="list-inline list-inline-sm footer-social-list-2">
-                  <li><a class="icon fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon fa fa-google-plus" href="#"></a></li>
-                  <li><a class="icon fa fa-instagram" href="#"></a></li>
+                  <li><a class="icon fa fa-facebook" href="https://www.facebook.com/SIDERPERUOFICIAL/"></a></li>
+                  
+                  <li><a class="icon fa fa-linkedin" href="https://pe.linkedin.com/company/siderperu"></a></li>
+                  <li><a class="icon fa fa-instagram" href="https://www.instagram.com/siderperuoficial/?hl=es-la"></a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 order-sm-first">
               <!-- Rights-->
               <p class="rights"><span>&copy;&nbsp;</span><span
-                  class="copyright-year"></span><span>&nbsp;</span><span>Wonder
-                  Tour</span>. All Rights Reserved. Design
-                by <a href="https://www.templatemonster.com">TemplateMonster</a></p>
+                  class="copyright-year"></span><span>&nbsp;</span><span>Wonder Tour</span>. Reservados todos los derechos. Diseño de <a href="https://www.templatemonster.com">TemplateMonster</a></p>
             </div>
             <div class="col-sm-6 col-md-4 text-md-right">
-              <p class="rights"><a href="#">Privacy Policy</a></p>
+              <li><a href="https://www.gerdaucorsa.com.mx/sites/mx_gerdau/files/PDF/POLITICA_INTEGRADA_2019-OK-min_0.pdf">Politica de Privacida</a></li>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Imports\ActividadImport;
 use App\Models\Actividad;
+use App\Models\Estudiante;
 use App\Models\Navidad;
 use App\Models\Proyecto;
 use Maatwebsite\Excel\Facades\Excel;
@@ -17,11 +18,14 @@ class NavidadController extends Controller
     {
         $proyectos = Proyecto::all();
         $navidads = Navidad::all();
+
         return view('admin.navidads.index', compact('proyectos','navidads'));
     }
     public function vista()
     {
         $proyectos = Proyecto::all();
+
+        
         return view('admin.navidads.vista', compact('proyectos'));
     }
 
@@ -90,6 +94,7 @@ class NavidadController extends Controller
     {
         $proyectos = Proyecto::all();
         $navidads = Navidad::all();
+
         return view('admin.navidads.crear', compact('proyectos','navidads','navidad'));
     }
 
@@ -120,29 +125,34 @@ class NavidadController extends Controller
     public function show(Navidad $navidad)
     {
         $proyectos = Proyecto::all();
+
         return view('admin.navidads.show', compact('navidad','proyectos'));
     }
 
-    public function edit($id)
+    public function edit(Navidad $navidad)
     {
-        //
+        $proyectos = Proyecto::all();
+
+        return view('admin.navidads.edit', compact('proyectos','navidad'));
     }
 
  
-    public function update(Request $request, $id)
+    public function update(Request $request, Navidad $navidad)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'fecha' => 'required'
+        ]);
+        $navidad->update($request->all());
+        return redirect()->route('admin.navidads.index',$navidad)->with('info','La Navidad se actualizado con exito');
     }
 
 
-    public function destroy(Actividad $navidad)
+    public function destroy(Navidad $navidad)
     {
         $navidad->delete();
         return back()->with('eliminar', 'ok');
     }
-    /* public function eliminar(Actividad $actividad)
-    {
-        $actividad->delete();
-        return back()->with('eliminar', 'ok');
-    } */
+   
 }

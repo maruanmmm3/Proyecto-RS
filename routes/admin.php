@@ -6,12 +6,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProyectoController;
 use App\Http\Controllers\TechnicalController;
 use App\Http\Controllers\ControlController;
+use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\FotoController;
+use App\Http\Controllers\GaleriaController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\NavidadController;
 use App\Http\Controllers\OrquestaController;
 use App\Http\Controllers\PromocionController;
+use App\Http\Controllers\ReconocimientoController;
 use App\Http\Controllers\SembrandoController;
+use App\Http\Controllers\ValorController;
 use App\Http\Controllers\VoluntarioController;
 
 Route::resource('proyecto', ProyectoController::class)->names('admin.proyectos');
@@ -24,6 +29,20 @@ Route::resource('mesaje', MensajeController::class)->names('admin.mensajes');
 Route::resource('voluntario', VoluntarioController::class)->names('admin.voluntarios');
 Route::resource('sembrando', SembrandoController::class)->names('admin.sembrandos');
 Route::resource('beneficiado', BeneficiadoController::class)->names('admin.beneficiados');
+Route::resource('equipo', EquipoController::class)->names('admin.equipos');
+Route::resource('valor', ValorController::class)->names('admin.valors');
+Route::resource('galeria', GaleriaController::class)->names('admin.galerias');
+Route::resource('foto', FotoController::class)->names('admin.fotos');
+Route::resource('reconocimiento', ReconocimientoController::class)->names('admin.reconocimientos');
+
+Route::get('frontend', [EquipoController::class, 'vista'])->name('frontent');
+
+
+Route::get('importacion', [ControlController::class, 'vistaindex'])->name('importacion');
+
+Route::get('inicios', [ProyectoController::class, 'vista'])->name('dash');
+
+Route::get('datos', [ProyectoController::class, 'datos'])->name('datos');
 
 
 Route::resource('navidades/navidad', NavidadController::class)->names('admin.navidads');
@@ -60,4 +79,9 @@ Route::get('', [ProyectoController::class, 'create'])->name('proyectos.create');
 
 Route::get('', [ProyectoController::class, 'index'])->name('proyectos.index'); */
 
-Route::get('control', [ControlController::class, 'vista'])->name('admin.proyectos.vista'); 
+Route::get('control/{proyecto}', [ControlController::class, 'vista'])->name('admin.proyectos.vista');
+Route::get('control/crear/{proyecto}', [ControlController::class, 'crear'])->name('admin.proyectos.crear');
+Route::post('control/import/{proyecto}', [ControlController::class, 'importExcel'])->name('admin.proyectos.import');
+
+Route::get('importacion/crearts', [ControlController::class, 'crearts'])->name('admin.importaciones.crearts');
+Route::post('importacion/imports', [ControlController::class, 'imports'])->name('admin.importaciones.imports');

@@ -11,18 +11,22 @@
                     aria-hidden="true"></i></a>
             </div>
         </div>
-        {{-- {{$promocion->id}} --}}
-       {{--  @foreach ($promocion as $pro)
-        {{$pro->id}}
-        @endforeach --}}
-   
-        
-        
+
     </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                    <img src="{{asset($promocion->image->url)}}" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+</div>
 
     @foreach ($carreras as $carrera)
         
-    
+   
     <div class="col-md-6">
         <div class="card">
             <div class="card-body">

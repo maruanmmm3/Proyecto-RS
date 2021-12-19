@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beneficiado;
+use App\Models\Estudiante;
 use App\Models\Proyecto;
 use App\Models\Sembrando;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class SembrandoController extends Controller
     {
         $proyectos = Proyecto::all();
         $sembrandos = Sembrando::all();
+
         return view('admin.sembrandos.index', compact('proyectos','sembrandos'));
     }
 
@@ -22,6 +24,8 @@ class SembrandoController extends Controller
     {
         $proyectos = Proyecto::all();
         $sembrandos = Sembrando::all();
+
+        
         return view('admin.sembrandos.create', compact('proyectos','sembrandos'));
     }
 
@@ -29,6 +33,7 @@ class SembrandoController extends Controller
     {
         $proyectos = Proyecto::all();
         $sembrandos = Sembrando::all();
+
         return view('admin.sembrandos.crear', compact('proyectos','sembrandos','sembrando'));
     }
     public function creando(Request $request,Sembrando $sembrando)
@@ -88,31 +93,28 @@ class SembrandoController extends Controller
         }
         foreach($beneficiadosmujer as $beneficiado){
             $mujer += $beneficiado;
-        } 
-        
-            /* $hombre = $beneficiado->hombre;
-            $mujer = $beneficiado->mujer; */
-        
-       /*  foreach($beneficiados as $beneficiado){
-            $hombre = $beneficiado->hombre;
         }
-        foreach($beneficiados as $beneficiado){
-            $mujer = $beneficiado->mujer;
-        } */
         
         return view('admin.sembrandos.show', compact('proyectos','sembrando','beneficiados'),["arbolT" => json_encode($arbol),"hombreT" => json_encode($hombre),"mujerT" => json_encode($mujer)]); 
     }
 
  
-    public function edit($id)
+    public function edit(Sembrando $sembrando)
     {
-        //
+        $proyectos = Proyecto::all();
+        return view('admin.sembrandos.edit', compact('proyectos','sembrando'));
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Sembrando $sembrando)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'fecha' => 'required'
+        ]);
+        $sembrando->update($request->all());
+        return redirect()->route('admin.sembrandos.index',$sembrando)->with('info','Sembrando se ha actualizado con exito');
     }
 
     public function destroy(Sembrando $sembrando)

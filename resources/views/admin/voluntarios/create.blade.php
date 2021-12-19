@@ -31,7 +31,24 @@
                 @error('encargado')
                 <span class="text-danger">{{$message}}</span>    
                 @enderror
+            </div>
 
+            <div class="form-group">
+                {!! Form::label('presupuestoesti', 'Presupuesto Estimado:') !!}
+                {!! Form::number('presupuestoesti', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el presupuesto estimado']) !!}
+
+                @error('presupuestoesti')
+                <span class="text-danger">{{$message}}</span>    
+                @enderror
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('ejecucionreal', 'Ejecución Real:') !!}
+                {!! Form::number('ejecucionreal', null, ['class' => 'form-control', 'placeholder' => 'Ingrese la ejecución real']) !!}
+
+                @error('ejecucionreal')
+                <span class="text-danger">{{$message}}</span>    
+                @enderror
             </div>
 
             <div class="form-group">

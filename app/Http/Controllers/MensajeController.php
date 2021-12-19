@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contacto;
+use App\Models\Estudiante;
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class MensajeController extends Controller
     {
         $proyectos = Proyecto::all();
         $mensajes = Contacto::all();
+
         return view('admin.mensajes.index', compact('proyectos','mensajes'));
     }
 

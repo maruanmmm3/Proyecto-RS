@@ -7,9 +7,6 @@
     </div>
 
     <div class="card mt-3">
-
-
-
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-8 col-md-8 mt-3">
@@ -18,18 +15,13 @@
 
                 </div>
 
-               
-
                 <div class="col-lg-4 col-md-4">
 
-                    <div class="container" style="position: relative;">
                         <img src="{{ asset('images/navidad2.jpg') }}" alt="">
                         <div style="position: absolute; bottom: 10px;left: 0; right: 0;opacity: 0.78"
                             class="d-flex justify-content-center">
-                            <a href="{{ route('admin.navidads.index') }}" class="btn btn-danger">Campaña Navideña</a>
+                            <a href="{{ route('admin.navidads.index') }}" class="btn btn-danger">Campañas Navideñas</a>
                         </div>
-
-                    </div>
 
                 </div>
 
